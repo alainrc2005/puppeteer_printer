@@ -32,6 +32,22 @@ Sencillamente realizando una petición POST/pdf con parámetros de entrada
 
 ## Salida
 La petición POST/pdf genera en <strong>path</strong> el archivo [uuid].pdf, donde uuid es el nombre de entrada.
+
+## Sugerencias
+En caso de ser necesario se pueden personalizar los márgenes de impresión pasando parámetros y cambiando en el archivo <strong>pdf.js</strong>
+```javascript
+await page.pdf({
+      path,
+      format: 'A4',
+      landscape: !!data.landscape,
+      margin: {
+        top: '1.0cm',
+        right: '1.0cm',
+        bottom: '1.0cm',
+        left: '1.0cm'
+      }
+    })
+```
 ## Licencia
 Siéntanse libre de utilizar este código como lo deseen. Gracias.
 Alain Ramírez Cabrejas (alainrc2005@gmail.com)
